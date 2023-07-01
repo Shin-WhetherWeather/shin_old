@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+  }
+
+  html {
+    height:100%;
+    width: 100%;
+    /*background-color: #d3dcdf;*/
+  }
+  ::-webkit-scrollbar {
+      width: 0;  /* Remove scrollbar space */
+      background: transparent;  /* Optional: just make scrollbar invisible */
+  }
+
+body, html {
+    height:100vh;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    font-size: 1.6vw;
+  }
+
+.descriptionBox > *{
+    background-color: #121212;
+    padding: 10px;
+    padding-left: 15px;
+    height: 100%;
+}
+
+.description{
+    position: relative;
+}
+
+.descriptionTitle{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1.8vw;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 14px solid;
+}
+
+.blinkCursor{
+    animation: blink 1.2s step-end infinite;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 6.5;
+}
+
+@keyframes typing {
+    from {width: 0}
+    to {width: auto;}
+  }
+
+  @keyframes blink {
+    50%{
+        border-color: transparent
+    }
+  }
+
+.tags{
+    position: absolute;
+    bottom: 15px;
+}
+
+.descriptionBox{
+    position: fixed;
+    left:0;
+    height: inherit;
+    width: 33.33%;
+    padding: 15px;
+    padding-right: 0px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.1vw;
+    color: whitesmoke;
+}
+
+
+[class*="col-"] {
+position: relative;
+float: left;
+padding: 15px;
+padding-bottom: 0;
+align-items: center;
+width:100%;
+}
+
+[class*="col-"] > *{
+    width: 100%;
+}
+
+@media only screen and (min-width: 1080px) {
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+}
+
+.row::after {
+content: "";
+clear: both;
+display: table;
+}
+
+.viewport 
+{
+  height:100%;
+  width: 100%;
+}
+
+
+.navbar{
+    position: fixed; 
+    display: flex;
+    top: 0; 
+    width: 100%;
+    z-index: 5;
+    transition: 2s;
+    padding: 10px;
+}
+
+.leftIcons{
+    display: flex;
+    padding-left: 15px; 
+    width: 33.333%;
+}
+
+.leftIcons>div{
+    transition: 2s;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
+
+.leftIcons>div::before{
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: black;
+    transition: 600ms;
+}
+
+.leftIcons>div:hover::before{
+    width: 100%;
+}
+
+.title{
+    width: 33.333%;
+    align-self: center;
+    text-align: center;
+}
+
+.rightIcons{
+    display: flex;
+    flex-direction: row;
+    padding-right: 15px; 
+    width: 33.333%;
+    margin-left: auto;
+}
+
+.rightIcons>div{
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.rightIcons>div:nth-last-child(2) { 
+    margin-left: auto 
+}
+
+.logoIcon{
+    filter: brightness(0) saturate(1);
+    transition: 400ms;
+}
+
+.logoIcon:hover{
+    filter: brightness(1) saturate(1);
+}
+
+
+.images::after{
+    content: '';
+    width: 0px;
+    height: 3px;
+    display: block;
+    background: black;
+    transition: 400ms;
+}
+
+.images:hover::after{
+    width: 100%;
+}
