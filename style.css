@@ -41,6 +41,7 @@ body, html {
     white-space: nowrap;
     overflow: hidden;
     border-right: 14px solid;
+    white-space: pre-line;
 }
 
 .blinkCursor{
@@ -74,9 +75,27 @@ body, html {
     padding-right: 0px;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.1vw;
-    color: whitesmoke;
+    color: #e2e2e2;
 }
 
+.readMore{
+    text-decoration: underline;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.readMore::before{
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: #e2e2e2;
+    transition: 600ms;
+}
+
+.readMore:hover::before{
+    width: 100%;
+}
 
 [class*="col-"] {
 position: relative;
@@ -116,7 +135,7 @@ display: table;
 .viewport 
 {
   height:100%;
-  width: 100%;
+  width: 66.66%;
 }
 
 
@@ -124,29 +143,50 @@ display: table;
     position: fixed; 
     display: flex;
     top: 0; 
-    width: 100%;
+    width: 33.33%;
     z-index: 5;
     transition: 2s;
     padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    height: 60px;
 }
 
 .leftIcons{
     display: flex;
-    padding-left: 15px; 
+    flex-direction: row;
+    padding-right: 15px; 
     width: 33.333%;
+    align-self: center;
 }
+
 
 .leftIcons>div{
-    transition: 2s;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    display: inline-block;
+    display:flex;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    align-self: center;
     cursor: pointer;
     user-select: none;
+    font-variation-settings: 'FILL' 0 ;
+    transition: 600ms;
 }
 
+.leftIcons>div>*{
+    align-self: center;
+}
+
+.navIcons{
+    transition: 400ms;
+    font-variation-settings: 'FILL' 0 ;
+}
+
+.navIcons:hover{
+    font-variation-settings: 'FILL' 1 ;
+}
+
+/*
 .leftIcons>div::before{
     content: '';
     width: 0px;
@@ -159,29 +199,40 @@ display: table;
 .leftIcons>div:hover::before{
     width: 100%;
 }
+*/
 
 .title{
-    width: 33.333%;
+    width: 50%;
     align-self: center;
-    text-align: center;
+    padding-left: 12px;
 }
 
 .rightIcons{
     display: flex;
     flex-direction: row;
-    padding-right: 15px; 
-    width: 33.333%;
+    width: 50%;
     margin-left: auto;
+    align-self: center;
 }
 
 .rightIcons>div{
+    display: flex;
     padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding-right: 2px;
+
+    align-self: center;
 }
 
-.rightIcons>div:nth-last-child(2) { 
+.rightIcons>div>*{
+    display: flex;
+    cursor: pointer;
+}
+
+.rightIcons>div>*>*{
+    align-self: center;
+}
+
+.rightIcons>div:nth-last-child(3) { 
     margin-left: auto 
 }
 
@@ -194,7 +245,23 @@ display: table;
     filter: brightness(1) saturate(1);
 }
 
+.images{
+    filter: saturate(0.15);
+    transition: 400ms;
+}
 
+.images:hover{
+    cursor: url('Icons/info_cursor.svg'), pointer;
+    mix-blend-mode: difference;
+    filter: saturate(1);
+}
+
+.imageSelected{
+    filter: saturate(1);
+}
+
+
+/*
 .images::after{
     content: '';
     width: 0px;
@@ -206,4 +273,9 @@ display: table;
 
 .images:hover::after{
     width: 100%;
+}
+*/
+
+.cursorWrapper{
+    mix-blend-mode: difference;
 }
