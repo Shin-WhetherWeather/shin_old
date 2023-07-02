@@ -1,7 +1,7 @@
 
 let typingEvents = [];
 
-function typeWriter(element, text, speed, index, isWord, callback){
+function typeWriter(element, text, speed, index, isWord, callback, is2Line = false){
     if(index < text.length){
         if(isWord){
             element.innerHTML = element.innerHTML.slice(0,-text[index].length);
@@ -26,15 +26,24 @@ function typeWriter(element, text, speed, index, isWord, callback){
             adjustedSpeed = 70 + text[index].length*20/index;
         }
         index++;
-        typingEvents.push(setTimeout( function(){typeWriter(element, text, speed, index, isWord, callback)}, adjustedSpeed));
+        typingEvents.push(setTimeout( function(){typeWriter(element, text, speed, index, isWord, callback, is2Line)}, adjustedSpeed));
     }
     else{
-        if(element.className.includes("descriptionTitle2")){
-            element.className += " blinkCursor";
+        
+
+        if(is2Line){
+            if(element.className.includes("descriptionTitle2")){
+                element.className += " blinkCursor";
+            }
+            else{
+                element.style.borderRight = "none";
+            }
         }
         else{
-            element.style.borderRight = "none";
+            element.className += " blinkCursor";
         }
+
+
         
         if(typeof callback !== 'undefined'){
             callback();
@@ -82,6 +91,13 @@ function updateText(index)
 {
     if(currentIndex != index)
     {
+        descriptionTitle.style.borderRight = null;
+        descriptionTitle2.style.borderRight = null;
+        descriptionTitle.classList.remove("blinkCursor");
+        descriptionTitle2.classList.remove("blinkCursor");
+
+
+
         descriptionTitle.innerHTML = "";
         descriptionTitle2.innerHTML = "";
         descriptionTitle.className = "descriptionTitle"
@@ -101,12 +117,15 @@ function updateText(index)
         
     
         if(typeof textData[index].titleText2 != 'undefined'){
+
+            descriptionTitle2.style.borderRight = "14px solid;";
             typeWriter(descriptionTitle, textData[index].titleText, 150, 0, false,          
                 
                 function(){
                 descriptionTitle.parentNode.insertBefore(newline, descriptionTitle.nextSibling);
-                typeWriter(descriptionTitle2, textData[index].titleText2, 150, 0, false);
-            });
+                typeWriter(descriptionTitle2, textData[index].titleText2, 150, 0, false, function(){}, true);
+            },
+            true);
             
         }
         else{
