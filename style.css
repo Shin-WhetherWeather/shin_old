@@ -58,7 +58,7 @@ body, html {
     left:0;
     height: inherit;
     width: 45%;
-    padding: 15px;
+    padding: 5px;
     padding-right: 0px;
     font-family: 'Roboto Mono', monospace;
     font-size: 2vw;
@@ -101,7 +101,7 @@ body, html {
 
 
 .col-main{
-    padding-top: 15px;
+    padding-top: 5px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -111,20 +111,20 @@ body, html {
     width: 100%;
     padding-top: 0px;
     padding-bottom: 0px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .col-right{
     width: 100%;
     padding-top: 0px;
     padding-bottom: 0px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 .col-left>*, .col-right>*{
-    padding-bottom: 15px;
+    padding-bottom: 5px;
 }
 
 .navSpacer{
@@ -162,14 +162,56 @@ body, html {
     width: 45%;
     z-index: 5;
     transition: 2s;
-    padding: 10px;
-    padding-top: 15px;
+    padding: 5px;
+    padding-top: 5px;
     padding-bottom: 0px;
     padding-right: 0px;
     height: 60px;
 }
 
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+    
+    .row{
+        padding: 5px;
+        padding-bottom: 0px;
+    }
+    
+    .row2{
+        padding: 5px;
+        padding-bottom: 0px;
+    
+    }
+    
+    .row2.text{
+        padding-top: 0px;
+    }
+    
+    .row2.text>*{
+        color: #e2e2e2;
+        font-size: 1vw;
+        border: solid 15px #121212;
+        background-color: #121212;
+    }
+
+    
+
+
 @media (min-width: 700px) {
+
+    .row{
+        padding: 15px;
+        padding-bottom: 0px;
+    }
+
+    .row2{
+        padding: 15px;
+        padding-bottom: 0px;
+    }
+
     .descriptionTitle{
         font-size: 3vw;
     }
@@ -180,10 +222,16 @@ body, html {
 
     .descriptionBox{
         font-size: 1.7vw;
+        padding: 15px;
+        padding-right: 0px;
     }
 
     .navbar{
         width: 33.33%;
+        padding: 10px;
+        padding-top: 15px;
+        padding-bottom: 0px;
+        padding-right: 0px;
     }
 
     .logoIcon>*{
@@ -209,6 +257,7 @@ body, html {
 
     .col-main{
         flex-direction: row;
+        padding-top: 15px;
     }
 
     .col-left .col-right{
@@ -229,6 +278,10 @@ body, html {
         padding-bottom: 0px;
         padding-right: 15px;
         padding-left: 0px;
+    }
+
+    .col-left>*, .col-right>*{
+        padding-bottom: 15px;
     }
 
 }
@@ -260,33 +313,6 @@ body, html {
 
 
 
-.row::after {
-content: "";
-clear: both;
-display: table;
-}
-
-.row{
-    padding: 15px;
-    padding-bottom: 0px;
-}
-
-.row2{
-    padding: 15px;
-    padding-bottom: 0px;
-
-}
-
-.row2.text{
-    padding-top: 0px;
-}
-
-.row2.text>*{
-    color: #e2e2e2;
-    font-size: 1vw;
-    border: solid 15px #121212;
-    background-color: #121212;
-}
 
 
 
@@ -454,6 +480,8 @@ display: table;
 
 .imageSelected{
     outline-color: #FFFFFF;
+    z-index: 99;
+    position: relative;
 }
 
 /*
