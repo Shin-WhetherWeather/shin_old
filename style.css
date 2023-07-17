@@ -220,10 +220,86 @@ body, html {
         }
     }
 
+    .rightIcons{
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        margin-left: 0;
+        align-self: center;
+    }
     
+    .rightIcons>div{
+        display: flex;
+        padding-left: 2vw;
+        padding-right: 2px;
+    
+        align-self: center;
+    }
+    
+    .rightIcons>div>*{
+        display: flex;
+        cursor: pointer;
+    }
+    
+    .rightIcons>div>*>*{
+        align-self: center;
+    }
+    
+    .rightIcons>div:nth-last-child(1) { 
+        margin-left: auto 
+    }
+
+    
+.rightIcons.desktop{
+    display: none;
+}
+
+.rightIcons.mobile{
+    display: flex;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    flex-direction: column;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content >* {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content {display: block;}
+
+  
 
 
 @media (min-width: 700px) {
+    .rightIcons.desktop{
+        display: flex;
+    }
+    
+    .rightIcons.mobile{
+        display: none;
+    }
+
+    .rightIcons>div:nth-last-child(3) { 
+        margin-left: auto 
+    }
+
+    .rightIcons>div:nth-last-child(1) { 
+        margin-left: 0
+    }
 
     .title{
         font-size: 1.8vw;
@@ -406,34 +482,6 @@ body, html {
     font-weight: 500;
 }
 
-.rightIcons{
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    margin-left: auto;
-    align-self: center;
-}
-
-.rightIcons>div{
-    display: flex;
-    padding-left: 2vw;
-    padding-right: 2px;
-
-    align-self: center;
-}
-
-.rightIcons>div>*{
-    display: flex;
-    cursor: pointer;
-}
-
-.rightIcons>div>*>*{
-    align-self: center;
-}
-
-.rightIcons>div:nth-last-child(3) { 
-    margin-left: auto 
-}
 
 .logoIcon{
     filter: brightness(0) saturate(1);
