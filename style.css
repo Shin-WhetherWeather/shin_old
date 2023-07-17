@@ -6,6 +6,7 @@
     height:100%;
     width: 100%;
     /*background-color: #d3dcdf;*/
+    
   }
   ::-webkit-scrollbar {
       width: 0;  /* Remove scrollbar space */
@@ -13,7 +14,7 @@
   }
 
 body, html {
-    height:100vh;
+    height:100%;
     width: 100%;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
@@ -134,7 +135,11 @@ body, html {
 {
     font-size: 0;
     height:100%;
-    width: 55%
+    width: 55%;
+    right:0;
+    position: fixed;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .navIcons{
