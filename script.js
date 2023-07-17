@@ -67,10 +67,12 @@ let images = document.querySelectorAll('.images');
 
 console.log(images);
 
+
 images.forEach(function(image, index){
-    image.children[0].addEventListener("click", (event) =>{
+    image.children[0].addEventListener("click", function(e){
+        console.log(e.target.parentElement.id);
         console.log(index);
-        updateText(index);
+        updateText(e.target.parentElement.id);
 
         images.forEach(function(image2){
             image2.classList.remove("imageSelected");
@@ -82,7 +84,10 @@ images.forEach(function(image, index){
     })
 });
 
+
+
 let currentIndex = -1;
+let currentId = "default";
 
 newline = document.createElement("br");
 newline.id = "newline";
@@ -119,11 +124,11 @@ function updateText(index)
         if(typeof textData[index].titleText2 != 'undefined'){
 
             descriptionTitle2.style.borderRight = "14px solid;";
-            typeWriter(descriptionTitle, textData[index].titleText, 150, 0, false,          
+            typeWriter(descriptionTitle, textData[index].titleText, 110, 0, false,          
                 
                 function(){
                 descriptionTitle.parentNode.insertBefore(newline, descriptionTitle.nextSibling);
-                typeWriter(descriptionTitle2, textData[index].titleText2, 150, 0, false, function(){}, true);
+                typeWriter(descriptionTitle2, textData[index].titleText2, 110, 0, false, function(){}, true);
             },
             true);
             
@@ -139,13 +144,17 @@ function updateText(index)
 }
 
 window.addEventListener("load", (event) => {
-    updateText(textData.length-1);
+    updateText("default");
   });
 
 
-  descriptionBox.addEventListener("click", (event) =>{
-    updateText(textData.length-1);
-  })
+descriptionBox.addEventListener("click", (event) =>{
+    updateText("default");
+    images.forEach(function(image){
+        image.classList.remove("imageSelected");
+    });
+  });
+
 
 
 //"animation: blink .5s step-end infinite alternate;"

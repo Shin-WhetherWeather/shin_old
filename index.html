@@ -5,12 +5,13 @@
     <link rel="icon" type="image/x-icon" href="Icons/cloud.svg">
     <meta name="description" content="Shin's Industrial Design Portfolio page">
     <meta name="keywords" content="industrial design Jian Shin See shinleatherworks">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700');
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
 
@@ -23,7 +24,7 @@
 
 
 <div style="display: flex; flex-direction: row;">
-    <div style="width:33.33%;height:calc(100% - 60px)">
+    <div class="navSpacer" style="height:calc(100% - 60px)">
 
         <div class = "navbar">
 
@@ -48,25 +49,25 @@
             -->
         
             <div class = "title">
-                <div>
-                    seejianshin     
-                </div>
+                    <div href="index.html">
+                        seejianshin     
+                    </div>
             </div>
         
             <div class = "rightIcons">
                 <div class="navIcons">
-                    <span class="material-symbols-rounded" style="font-size: 36px;">
+                    <span class="material-symbols-rounded">
                         mail
                     </span>
                 </div>
                 <div>
                     <a href="https://www.instagram.com/shin_designworks/" target="_blank" rel="noopener noreferrer" class = "logoIcon">
-                        <img src="Logos/Instagram_Glyph_Gradient.png" height="29" alt="Instagram" >
+                        <img src="Logos/Instagram_Glyph_Gradient.png" alt="Instagram" >
                     </a>
                 </div>
                 <div>
                     <a href="https://www.linkedin.com/in/seejianshin/" target="_blank" rel="noopener noreferrer" class = "logoIcon">
-                        <img src="Logos/LI-In-Bug.png" height="29" alt="LinkedIn">
+                        <img src="Logos/LI-In-Bug.png" alt="LinkedIn">
                     </a>
                 </div>
             </div>
@@ -74,7 +75,7 @@
         
         </div>
 
-        <div style="width:33.33%;height:60px"></div>
+        <div class = "navSpacer" style="height:60px"></div>
 
     
 
@@ -86,7 +87,9 @@
                 <div id="descriptionBody">
                 </div>
                 <br><br>
-                <div id="readMore" class="readMore"></div>
+                <a href="ToI.html">
+                    <div id="readMore" class="readMore"></div>
+                </a>
                 <div class="tags" id = "descriptionTags">
                 </div>
             </div>
@@ -100,10 +103,12 @@
     
 
 
-
-                <div class="row images">
+            <div class="row">
+                <div class="images" id="ToI">
                     <img src="Media\Images\ToI\ToI_Hero.jpg">
                 </div>
+            </div>
+
                 
 
 
@@ -111,22 +116,29 @@
 
         <div class="col-main">
             <div class="col-left">
-                <div class = "images">
+                <div class = "images" id="WWClock">
                     <img src="Media\Images/WWClock/clock.gif">
                 </div>
-
-                <div class = "images">
+                <div class = "images" id="TaskClock">
+                    <img src="Media/Images/TaskClock/Gallery.jpg">
+                </div>
+                <div class = "images" id="Leather">
                     <img src="Media/Images/Leather/front.jpg">
                 </div>
+
+
 
             </div>
 
             <div class="col-right">
-                <div class = "images">
+                <div class = "images" id="Earphones">
                     <img src="Media/Images/Earphones/Case2.gif">
                 </div>
+                <div class = "images" id="KikiWatch">
+                    <img src="Media/Images/KikiWatch/Poster.png">
+                </div>
 
-                <div class = "images">
+                <div class = "images" id="Hairdryer"> 
                     <img src="Media/Images/Hairdryer/hero.jpg">
                 </div>
     

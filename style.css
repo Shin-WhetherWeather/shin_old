@@ -40,26 +40,12 @@ body, html {
     font-size: 1.8vw;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 14px solid;
     white-space: pre-line;
 }
 
-.blinkCursor{
-    animation: blink 1.2s step-end infinite;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 6.5;
+#descriptionBody{
+    font-size: 1vw;
 }
-
-@keyframes typing {
-    from {width: 0}
-    to {width: auto;}
-  }
-
-  @keyframes blink {
-    50%{
-        border-color: transparent
-    }
-  }
 
 .tags{
     position: absolute;
@@ -70,18 +56,28 @@ body, html {
     position: fixed;
     left:0;
     height: inherit;
-    width: 33.33%;
+    width: 45%;
     padding: 15px;
     padding-right: 0px;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.1vw;
     color: #e2e2e2;
+    empty-cells: hide;
 }
 
 .readMore{
     text-decoration: underline;
+    font-weight: 600;
     width: fit-content;
     cursor: pointer;
+    color: #121212;
+    background-color: #929292;
+    border: solid #929292 15px;
+    transition: 600ms;
+}
+
+.readMore:empty{
+    border: none;
 }
 
 .readMore::before{
@@ -89,7 +85,7 @@ body, html {
     width: 0px;
     height: 1px;
     display: block;
-    background: #e2e2e2;
+    background: #121212;
     transition: 600ms;
 }
 
@@ -97,21 +93,21 @@ body, html {
     width: 100%;
 }
 
-
-
-
-[class*="col-"] > *{
-    width: 100%;
+.readMore:hover{
+    background-color: #e2e2e2;
+    border-color: #e2e2e2;
 }
 
+
 .col-main{
+    padding-top: 15px;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .col-left{
-    width: 50%;
+    width: 100%;
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 15px;
@@ -119,32 +115,121 @@ body, html {
 }
 
 .col-right{
-    width: 50%;
+    width: 100%;
     padding-top: 0px;
     padding-bottom: 0px;
     padding-right: 15px;
-    padding-left: 0px;
+    padding-left: 15px;
 }
 
 .col-left>*, .col-right>*{
     padding-bottom: 15px;
 }
 
-@media only screen and (min-width: 1080px) {
-/* For desktop: */
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+.navSpacer{
+    width: 45%;
 }
+
+.viewport 
+{
+    font-size: 0;
+    height:100%;
+    width: 55%
+}
+
+.navIcons{
+    transition: 400ms;
+    font-variation-settings: 'FILL' 0 ;
+}
+
+.logoIcon>*{
+    height:18px;
+}
+
+.material-symbols-rounded{
+    font-size: 22px;
+}
+
+.navbar{
+    position: fixed; 
+    display: flex;
+    top: 0; 
+    width: 45%;
+    z-index: 5;
+    transition: 2s;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    height: 60px;
+}
+
+@media (min-width: 700px) {
+    .navbar{
+        width: 33.33%;
+    }
+
+    .logoIcon>*{
+        height: 22px;
+    }
+
+    .material-symbols-rounded{
+        font-size: 27px;
+    }
+
+    .descriptionBox{
+        width: 33.33%;
+    }
+
+    .navSpacer{
+        width: 33.33%;
+    }
+
+    
+    .viewport{
+        width: 66.66%;
+    }
+
+    .col-main{
+        flex-direction: row;
+    }
+
+    .col-left .col-right{
+        width: 50%;
+    }
+
+    .col-left{
+        width: 100%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-right{
+        width: 100%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-right: 15px;
+        padding-left: 0px;
+    }
+
+}
+
+
+@media (min-width: 1200px) {
+    .logoIcon>*{
+        height: 29px;
+    }
+
+    .material-symbols-rounded{
+        font-size: 36px;
+    }
+}
+
+
+
+
 
 .row::after {
 content: "";
@@ -154,29 +239,31 @@ display: table;
 
 .row{
     padding: 15px;
-}
-
-.viewport 
-{
-    font-size: 0;
-    height:100%;
-    width: 66.66%;
-}
-
-
-.navbar{
-    position: fixed; 
-    display: flex;
-    top: 0; 
-    width: 33.33%;
-    z-index: 5;
-    transition: 2s;
-    padding: 10px;
-    padding-top: 15px;
     padding-bottom: 0px;
-    padding-right: 0px;
-    height: 60px;
 }
+
+.row2{
+    padding: 15px;
+    padding-bottom: 0px;
+
+}
+
+.row2.text{
+    padding-top: 0px;
+}
+
+.row2.text>*{
+    color: #e2e2e2;
+    font-size: 1vw;
+    border: solid 15px #121212;
+    background-color: #121212;
+}
+
+
+
+
+
+
 
 .leftIcons{
     display: flex;
@@ -202,11 +289,6 @@ display: table;
     align-self: center;
 }
 
-.navIcons{
-    transition: 400ms;
-    font-variation-settings: 'FILL' 0 ;
-}
-
 .navIcons:hover{
     font-variation-settings: 'FILL' 1 ;
 }
@@ -230,6 +312,23 @@ display: table;
     width: 50%;
     align-self: center;
     padding-left: 12px;
+
+    font-family: "Roboto mono", sans-serif;
+    font-weight: 200;
+    transition: font-weight 600ms;
+
+    &:hover{
+        font-weight: 700;
+    }
+}
+
+.title>*{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.title:hover{
+    font-weight: 500;
 }
 
 .rightIcons{
@@ -270,25 +369,63 @@ display: table;
     filter: brightness(1) saturate(1);
 }
 
-.images{
-    filter: saturate(0.15);
-    transition: 400ms;
-}
 
 .images>*{
+    filter: saturate(0.25);
+    opacity: 0.75;
+    transition: 400ms;
+    outline:7px solid #FFFFFF;
+    transition: 1.5s;
     width: 100%;
 }
 
-.images:hover{
+.imagesPage>*{
+    width: 100%;
+}
+
+.images:hover>*{
     cursor: url('Icons/info_cursor.svg'), pointer;
-    mix-blend-mode: difference;
+    opacity: 1;
     filter: saturate(1);
+}
+
+
+#ToI.imageSelected>*{
+    outline:7px solid #c2d4db;
+}
+
+#WWClock.imageSelected>*{
+    outline:7px solid #ccacbd;
+}
+
+#Earphones.imageSelected>*{
+    outline:7px solid #e09797;
+}
+
+#KikiWatch.imageSelected>*{
+    outline:7px solid #d1a2a2;
+}
+
+#Leather.imageSelected>*{
+    outline: 7px solid rgb(212, 194, 161);
+}
+
+#TaskClock.imageSelected>*{
+    outline: 7px solid rgb(197, 182, 162);
+}
+
+#Hairdryer.imageSelected>*{
+    outline: 7px solid #b6b6b6
+}
+
+.imageSelected>*{
+    filter: saturate(1);
+    opacity: 1;
 }
 
 .imageSelected{
-    filter: saturate(1);
+    outline-color: #FFFFFF;
 }
-
 
 /*
 .images::after{
