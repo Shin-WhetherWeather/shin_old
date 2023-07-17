@@ -166,7 +166,7 @@ body, html {
     padding-top: 5px;
     padding-bottom: 0px;
     padding-right: 0px;
-    height: 60px;
+    height: 30px;
 }
 
 .row::after {
@@ -188,6 +188,7 @@ body, html {
     
     .row2.text{
         padding-top: 0px;
+        display: none;
     }
     
     .row2.text>*{
@@ -206,6 +207,9 @@ body, html {
         font-weight: 500;
         font-size: 4vw;
         transition: font-weight 600ms;
+
+        color: #121212;
+        text-decoration: none;
         
         -webkit-transform:scale(0.6,1); /* Safari and Chrome */
         -moz-transform:scale(0.6,1); /* Firefox */
@@ -218,6 +222,11 @@ body, html {
         &:hover{
             font-weight: 700;
         }
+    }
+
+    .title>*:visited{
+        color: #121212;
+        text-decoration: none;
     }
 
     .rightIcons{
@@ -281,10 +290,25 @@ body, html {
 
   .dropdown:hover .dropdown-content {display: block;}
 
-  
+  .navSpacer.bottom{
+    height:calc(100% - 30px); 
+}
+
+.navSpacer.top{
+    height:30px;
+}
+
 
 
 @media (min-width: 700px) {
+    .navSpacer.bottom{
+        height:calc(100% - 60px); 
+    }
+
+    .navSpacer.top{
+        height:60px;
+    }
+
     .rightIcons.desktop{
         display: flex;
     }
@@ -321,6 +345,10 @@ body, html {
         padding-bottom: 0px;
     }
 
+    .row2.text{
+        display: block;
+    }
+
     .descriptionTitle{
         font-size: 3vw;
     }
@@ -341,6 +369,7 @@ body, html {
         padding-top: 15px;
         padding-bottom: 0px;
         padding-right: 0px;
+        height: 60px;
     }
 
     .logoIcon>*{
