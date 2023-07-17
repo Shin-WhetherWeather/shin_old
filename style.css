@@ -38,14 +38,14 @@ body, html {
 .descriptionTitle{
     display: inline-block;
     font-weight: 400;
-    font-size: 1.8vw;
+    font-size: 4vw;
     white-space: nowrap;
     overflow: hidden;
     white-space: pre-line;
 }
 
 #descriptionBody{
-    font-size: 1vw;
+    font-size: 2.5vw;
 }
 
 .tags{
@@ -61,7 +61,7 @@ body, html {
     padding: 15px;
     padding-right: 0px;
     font-family: 'Roboto Mono', monospace;
-    font-size: 1.1vw;
+    font-size: 2vw;
     color: #e2e2e2;
     empty-cells: hide;
 }
@@ -170,6 +170,18 @@ body, html {
 }
 
 @media (min-width: 700px) {
+    .descriptionTitle{
+        font-size: 3vw;
+    }
+
+    #descriptionBody{
+        font-size: 2vw;
+    }
+
+    .descriptionBox{
+        font-size: 1.7vw;
+    }
+
     .navbar{
         width: 33.33%;
     }
@@ -223,6 +235,18 @@ body, html {
 
 
 @media (min-width: 1200px) {
+    .descriptionTitle{
+        font-size: 1.8vw;
+    }
+
+    #descriptionBody{
+        font-size: 1vw;
+    }
+
+    .descriptionBox{
+        font-size: 1.1vw;
+    }
+
     .logoIcon>*{
         height: 29px;
     }
