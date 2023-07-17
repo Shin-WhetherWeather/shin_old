@@ -57,7 +57,7 @@ body, html {
     position: fixed;
     left:0;
     height: inherit;
-    width: 45%;
+    width: 33.33%;
     padding: 5px;
     padding-right: 0px;
     font-family: 'Roboto Mono', monospace;
@@ -128,14 +128,14 @@ body, html {
 }
 
 .navSpacer{
-    width: 45%;
+    width: 33.33%;
 }
 
 .viewport 
 {
     font-size: 0;
     height:100%;
-    width: 55%;
+    width: 66.66%;
     right:0;
     position: fixed;
     overflow-y: scroll;
@@ -159,7 +159,7 @@ body, html {
     position: fixed; 
     display: flex;
     top: 0; 
-    width: 45%;
+    width: 33.33%;
     z-index: 5;
     transition: 2s;
     padding: 5px;
@@ -197,10 +197,43 @@ body, html {
         background-color: #121212;
     }
 
+    .title{
+        width: 50%;
+        align-self: center;
+        padding-left: 12px;
+    
+        font-family: "Roboto mono", sans-serif;
+        font-weight: 500;
+        font-size: 4vw;
+        transition: font-weight 600ms;
+        
+        -webkit-transform:scale(0.6,1); /* Safari and Chrome */
+        -moz-transform:scale(0.6,1); /* Firefox */
+        -ms-transform:scale(0.6,1); /* IE 9 */
+        -o-transform:scale(0.6,1); /* Opera */
+        transform:scale(0.6,1); /* W3C */
+    
+        transform-origin: 0 0;
+    
+        &:hover{
+            font-weight: 700;
+        }
+    }
+
     
 
 
 @media (min-width: 700px) {
+
+    .title{
+        font-size: 1.8vw;
+        font-weight: 200;
+        -webkit-transform:scale(1,1); /* Safari and Chrome */
+        -moz-transform:scale(1,1); /* Firefox */
+        -ms-transform:scale(1,1); /* IE 9 */
+        -o-transform:scale(1,1); /* Opera */
+        transform:scale(1,1); /* W3C */
+    }
 
     .row{
         padding: 15px;
@@ -363,19 +396,6 @@ body, html {
 }
 */
 
-.title{
-    width: 50%;
-    align-self: center;
-    padding-left: 12px;
-
-    font-family: "Roboto mono", sans-serif;
-    font-weight: 200;
-    transition: font-weight 600ms;
-
-    &:hover{
-        font-weight: 700;
-    }
-}
 
 .title>*{
     text-decoration: none;
